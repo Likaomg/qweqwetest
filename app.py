@@ -6,7 +6,7 @@ import sqlite3
 
 app = Flask(__name__)
 app.secret_key=os.environ.get("SECRET_KEY","change-me")
-DB="database.db"
+DB = os.path.join(os.path.dirname(__file__), "database.db")
 
 def db(): return sqlite3.connect(DB)
 
@@ -88,8 +88,9 @@ def login():
             return redirect("/")
     return render_template("auth.html",title="Вход",btn="Войти")
 
+init_db()
+
 if __name__=="__main__":
-    init_db()
     app.run()
 
 
