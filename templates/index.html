@@ -5,7 +5,7 @@
 <div class="grid">
 {% for g in games %}
 <div class="card">
-<img class="cover" src="{{url_for('static',filename=g[6])}}" alt="{{g[1]}}">
+<img class="cover" src="/static/{{g[6]}}" alt="{{g[1]}}">
 <div class="info">
 <h3>{{g[1]}}</h3>
 <p>{{g[2]}} • {{g[3]}}</p>
