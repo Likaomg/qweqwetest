@@ -10,6 +10,16 @@ DB = os.path.join(os.path.dirname(__file__), "database.db")
 
 def db(): return sqlite3.connect(DB)
 
+@app.context_processor
+def inject_user():
+    u=None
+    if "uid" in session:
+        c=db()
+        row=c.execute("SELECT id,username FROM users WHERE id=?",(session["uid"],)).fetchone()
+        c.close()
+        if row: u={"id":row[0],"username":row[1]}
+    return dict(user=u)
+
 def init_db():
     c=db()
     cur=c.cursor()
@@ -100,6 +110,6 @@ def logout():
 
 @app.route('/favorite/remove/<int:gid>')
 def remove_favorite(gid):
-    if 'user_id' not in session: return redirect('/login')
-    c=db();cur=c.cursor();cur.execute('DELETE FROM favorites WHERE user_id=? AND game_id=?',(session['user_id'],gid));c.commit();c.close()
+    if 'uid' not in session: return redirect('/login')
+    c=db();cur=c.cursor();cur.execute('DELETE FROM favorites WHERE user_id=? AND game_id=?',(session['uid'],gid));c.commit();c.close()
     return redirect('/favorites')

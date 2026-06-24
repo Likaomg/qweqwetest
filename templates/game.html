@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="/static/style.css">
+<div class="nav"><div class="logo">🎮 RetroArchive</div><div>{% if user %}<a href="/favorites">Избранное</a><span class="uname">{{user.username}}</span><a href="/logout">Выйти</a>{% else %}<a href="/login">Вход</a><a href="/register">Регистрация</a>{% endif %}</div></div>
 <div class="page">
 <div class="card">
 <img class="cover" src="{{game[6]}}" alt="{{game[1]}}">

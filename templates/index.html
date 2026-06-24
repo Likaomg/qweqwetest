@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="/static/style.css">
-<div class="nav"><div class="logo">🎮 RetroArchive</div><div><a href="/favorites">Избранное</a><a href="/login">Вход</a><a href="/register">Регистрация</a></div></div>
+<div class="nav"><div class="logo">🎮 RetroArchive</div><div>{% if user %}<a href="/favorites">Избранное</a><span class="uname">{{user.username}}</span><a href="/logout">Выйти</a>{% else %}<a href="/login">Вход</a><a href="/register">Регистрация</a>{% endif %}</div></div>
 <div class="hero"><h1>Архив забытых игр</h1><p>Культовые игры PlayStation и Sega</p></div>
 <div class="grid">
 {% for g in games %}
