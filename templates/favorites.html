@@ -1,0 +1,3 @@
+
+<link rel="stylesheet" href="/static/style.css">
+<div class="page"><h1>Избранное</h1>{% for g in games %}<p>❤️ {{g[1]}} <a href="/favorite/remove/{{g[0]}}">❌ Удалить</a></p>{% endfor %}</div>

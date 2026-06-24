@@ -1,0 +1,17 @@
+
+<link rel="stylesheet" href="/static/style.css">
+<div class="nav"><div class="logo">🎮 RetroArchive</div><div><a href="/favorites">Избранное</a><a href="/login">Вход</a><a href="/register">Регистрация</a></div></div>
+<div class="hero"><h1>Архив забытых игр</h1><p>Культовые игры PlayStation и Sega</p></div>
+<div class="grid">
+{% for g in games %}
+<div class="card">
+<div class="cover"></div>
+<div class="info">
+<h3>{{g[1]}}</h3>
+<p>{{g[2]}} • {{g[3]}}</p>
+<p>⭐ {{g[5]}}</p>
+<a class="btn" href="/game/{{g[0]}}">Подробнее</a>
+{% if g[0] in favs %}<p>❤️ В избранном</p>{% else %}<p><a href="/favorite/{{g[0]}}">🤍 Добавить</a></p>{% endif %}
+</div></div>
+{% endfor %}
+</div>

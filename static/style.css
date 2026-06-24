@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+body{font-family:Inter,sans-serif;background:#0f172a;color:white;margin:0}
+.nav{display:flex;justify-content:space-between;padding:20px 60px;background:#111827}
+.logo{font-size:24px;font-weight:700}
+.nav a{color:#cbd5e1;text-decoration:none;margin-left:20px}
+.hero{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#1e293b,#0f172a)}
+.hero h1{font-size:56px;margin:0}
+.hero p{color:#94a3b8}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;padding:40px 60px}
+.card{background:#1e293b;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.cover{height:220px;background:linear-gradient(135deg,#38bdf8,#f43f5e)}
+.info{padding:18px}
+.btn{display:inline-block;background:#f43f5e;color:white;padding:10px 14px;border-radius:10px;text-decoration:none}
+.page{max-width:1000px;margin:auto;padding:40px}
+.auth{max-width:400px;margin:80px auto;background:#1e293b;padding:30px;border-radius:16px}
+input{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:none}
+button{background:#f43f5e;color:white;border:none;padding:12px 16px;border-radius:10px;width:100%}
